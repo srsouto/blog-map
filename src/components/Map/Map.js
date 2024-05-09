@@ -14,8 +14,8 @@ import './Map.scss';
 
 const Map = ({ onZoomChange, trips, selectedTrip }) => {
 
-  let center = { lat: 63.08843, lng: -7.66545 };
-  let zoomLevels = { desktop: 4, mobile: 2 };
+  let center = { lat: 40.4380986, lng: -3.8443432 };
+  let zoomLevels = { desktop: 6.5, mobile: 5 };
   if (selectedTrip) {
     center = selectedTrip.mapCenter;
     zoomLevels = selectedTrip.mapZoomLevels;
@@ -61,7 +61,7 @@ const Map = ({ onZoomChange, trips, selectedTrip }) => {
   };
 
   const githubButton = (
-    <a href="https://github.com/iwazaru/road-trips/" className="github-corner" aria-label="View source on Github">
+    <a href="https://github.com/srsouto/blog-map" className="github-corner" aria-label="View source on Github">
       <svg width="50" height="50" viewBox="0 0 250 250" className="github-corner-image" aria-hidden="true">
         <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
         <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
@@ -79,7 +79,7 @@ const Map = ({ onZoomChange, trips, selectedTrip }) => {
       <div className="Map">
         <GoogleMapReact onClick={onClick}
           options={() => ({ fullscreenControl: false })}
-          bootstrapURLKeys={{ key: 'AIzaSyBv8W4b5MznculFqFknQE79HJIDW5YXX9w' }}
+          bootstrapURLKeys={{ key: 'AIzaSyAPihPswBGIvPxt5hg01mGqvE4JzRB_f8I' }}
           zoom={getZoomForWidth(zoomLevels)}
           center={center}
           onChange={onChange}

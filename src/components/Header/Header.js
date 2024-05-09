@@ -6,8 +6,8 @@ import './Header.scss';
 
 export default function Header({ selectedTrip }) {
 
-  let title = 'Road Trips';
-  let subtitle = 'Journal de voyage de Mathilde & Clément';
+  let title = 'Souto 2024';
+  let subtitle = 'Iberian travel journal!';
   let link = '/';
   let logo = (
     <img className="logo" src="/images/icons/favicon-32x32.png" height='32'
