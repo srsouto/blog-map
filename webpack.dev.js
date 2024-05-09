@@ -2,6 +2,7 @@ const merge = require('webpack-merge');
 const history = require('connect-history-api-fallback');
 const convert = require('koa-connect');
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
 
 const common = require('./webpack.common.js');
 
@@ -23,4 +24,7 @@ module.exports = merge(common, {
   resolve: {
     alias: { 'react-dom': '@hot-loader/react-dom' }
   },
+  plugins: [
+    new Dotenv()
+  ],
 });

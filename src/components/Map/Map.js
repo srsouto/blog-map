@@ -15,7 +15,7 @@ import './Map.scss';
 const Map = ({ onZoomChange, trips, selectedTrip }) => {
 
   let center = { lat: 40.4380986, lng: -3.8443432 };
-  let zoomLevels = { desktop: 6.5, mobile: 5 };
+  let zoomLevels = { desktop: 6, mobile: 5 };
   if (selectedTrip) {
     center = selectedTrip.mapCenter;
     zoomLevels = selectedTrip.mapZoomLevels;
@@ -79,7 +79,7 @@ const Map = ({ onZoomChange, trips, selectedTrip }) => {
       <div className="Map">
         <GoogleMapReact onClick={onClick}
           options={() => ({ fullscreenControl: false })}
-          bootstrapURLKeys={{ key: 'AIzaSyAPihPswBGIvPxt5hg01mGqvE4JzRB_f8I' }}
+          bootstrapURLKeys={{ key: process.env.GOOGLE_MAPS_API_KEY || '' }}
           zoom={getZoomForWidth(zoomLevels)}
           center={center}
           onChange={onChange}
