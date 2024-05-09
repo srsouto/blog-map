@@ -1,6 +1,6 @@
 # Road Trips
 
-This repository contains the source code and content of our [travel blog](https://roadtrips.iwazaru.fr/).
+This repository contains the source code and content of my [travel blog](https://doesnt.exist.biz/).
 
 All the source code is available under the
 [MIT License](https://opensource.org/licenses/MIT).
@@ -25,29 +25,9 @@ yarn
 yarn start
 ```
 
-## Create your own travel blog using road-trips
+## Create your own
 
-**Road Trips** has not been built with reusability in mind, as it contain both
-the source code and the data (text and photos) of my travel blog. You can still
-use it to build your own travel blog. Here's a few suggestions on how to get 
-you started.
-
-### Fork and clone
-
-1.  Fork this repository and clone your fork
-
-2.  Install dependencies using `yarn`
-
-3.  [Get a Google Maps API key](https://developers.google.com/maps/documentation/javascript/get-api-key) 
-    and replace mine in `src/components/Map/Map.js`
-
-Now you should be able to run *my* travel blog locally using `yarn start`.
-
-Optionnaly, you can 
-[configure an upstream remote](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/configuring-a-remote-for-a-fork)
-pointing to this respository in order to
-[keep your fork in sync](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork) 
-with the original source code.
+This repo has been graciously taken from [here](https://github.com/clemlatz/road-trips)!
 
 ### Add your trips
 
