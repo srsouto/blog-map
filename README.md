@@ -27,7 +27,7 @@ yarn start
 
 ## Create your own
 
-This repo has been graciously taken from [here](https://github.com/clemlatz/road-trips)!
+This repo has been graciously forked from [here](https://github.com/clemlatz/road-trips)!
 
 ### Add your trips
 
