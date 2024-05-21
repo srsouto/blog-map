@@ -4,6 +4,7 @@ import React, { Fragment } from 'react';
 import { Router, Route } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
 import { createBrowserHistory } from 'history';
+import { setDefaults, fromAddress } from 'react-geocode';
 
 import Entry from '../Entry/Entry';
 import Header from '../Header/Header';
@@ -23,6 +24,10 @@ class App extends React.Component {
 
   constructor(props) {
     super(props);
+    setDefaults({
+      key: process.env.GOOGLE_MAPS_API_KEY || '',
+      language: "en",
+    });
     this.state = {
       trips: null,
       selectedTrip: null,
@@ -31,7 +36,26 @@ class App extends React.Component {
   }
 
   _onTripLoad(trips, selectedTrip) {
-    this.setState({ trips, selectedTrip });
+    if (selectedTrip) {
+      const requestsForCoords = [];
+      selectedTrip.entries.forEach((entry, i) => {
+        if (entry.address) {
+          requestsForCoords.push(fromAddress(entry.address).then(({results}) => {
+            console.log("result", results);
+            const location = results[0].geometry.location
+            selectedTrip.entries[i].coords = [location.lat, location.lng];
+          }))
+        }
+      });
+      Promise.all(requestsForCoords).then(() => {
+        console.log("called", selectedTrip);
+        this.setState({ trips, selectedTrip });
+      })
+    }
+    if (!selectedTrip) {
+      console.log("called outside promise", selectedTrip);
+      this.setState({ trips, selectedTrip });
+    }
     return null;
   }
 

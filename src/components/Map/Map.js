@@ -1,8 +1,9 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
 import GoogleMapReact from 'google-map-react';
 import { withRouter } from 'react-router-dom';
 import slugify from 'slugify';
+import { useEffect } from 'react';
 
 import HomeButton from '../HomeButton/HomeButton';
 import Pin from '../Pin/Pin';
@@ -13,38 +14,44 @@ import { getZoomForWidth } from '../../utils';
 import './Map.scss';
 
 const Map = ({ onZoomChange, trips, selectedTrip }) => {
+  const [markers, setMarkers] = useState([]);
+
+  useEffect(() => {
+    console.log("selectedTrip changed");
+    createMarkers();
+  }, [trips, selectedTrip]);
+
+  const createMarkers = async () => {
+    if (selectedTrip) {
+      setMarkers(selectedTrip.entries.map(entry => {
+        const entrySlug = slugify(entry.title, { lower: true, remove: /[:,]/ });
+        if (!entry.coords) {
+          return null;
+        }
+        return (
+          <Pin key={`${entry.trip}-${entry.id}`}
+            lat={entry.coords[0]} lng={entry.coords[1]}
+            href={`/${selectedTrip.id}/${entry.id}-${entrySlug}`}
+          >
+            {entry.id}
+          </Pin>
+        );
+      }));
+    } else if (trips) {
+      setMarkers(trips.map(trip => {
+        const { lat, lng } = trip.mapCenter;
+        return (
+          <TripLink key={`${trip.id}`} lat={lat} lng={lng} trip={trip} />
+        );
+      }));
+    }
+  }
 
   let center = { lat: 40.4380986, lng: -3.8443432 };
   let zoomLevels = { desktop: 6, mobile: 5 };
   if (selectedTrip) {
     center = selectedTrip.mapCenter;
     zoomLevels = selectedTrip.mapZoomLevels;
-  }
-
-  let markers;
-  let homeButtonShown = false;
-  if (selectedTrip) {
-    homeButtonShown = true;
-    markers = selectedTrip.entries.map(entry => {
-      const entrySlug = slugify(entry.title, { lower: true, remove: /[:,]/ });
-      return (
-        <Pin key={`${entry.trip}-${entry.id}`}
-          lat={entry.coords[0]} lng={entry.coords[1]}
-          href={`/${selectedTrip.id}/${entry.id}-${entrySlug}`}
-        >
-          {entry.id}
-        </Pin>
-      );
-    });
-  }
-
-  else if (trips) {
-    markers = trips.map(trip => {
-      const { lat, lng } = trip.mapCenter;
-      return (
-        <TripLink key={`${trip.id}`} lat={lat} lng={lng} trip={trip} />
-      );
-    });
   }
 
   const onClick = ({ lat, lng }) => {
@@ -74,7 +81,7 @@ const Map = ({ onZoomChange, trips, selectedTrip }) => {
 
   return (
     <Fragment>
-      <HomeButton shown={homeButtonShown} />
+      <HomeButton shown={!!selectedTrip} />
       {githubButton}
       <div className="Map">
         <GoogleMapReact onClick={onClick}
