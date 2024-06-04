@@ -2,15 +2,15 @@
   {
     "id": "madrid",
     "title": "Madrid",
-    "subtitle": "May 1 - May 3",
-    "linkTitle": "Madrid, May 1 - May 3",
+    "subtitle": "May 2 - 3",
+    "linkTitle": "Madrid, May 2 - 3",
     "mapCenter": {
       "lat": 40.416775,
       "lng": -3.703790
     },
     "mapZoomLevels": {
-      "desktop": 16,
-      "mobile": 16
+      "desktop": 15,
+      "mobile": 15
     },
     "entries": [
       {
@@ -104,6 +104,151 @@
           },
           {
             "id": "E5"
+          }
+        ]
+      },
+      {
+        "id": "7",
+        "title": "Plaza Mayor",
+        "date": "1 May",
+        "coords": [
+          40.415401,
+          -3.707387
+        ],
+        "content": "We took another break in the gorgeous Plaza Mayor. Dad drank some brown, Mom had sangria that was a bit too sweet, and I had a gin & tonic. This was also one of the many times we ate croquettes.",
+        "photos": [
+          {
+            "id": "F1"
+          },
+          {
+            "id": "F2"
+          },
+          {
+            "id": "F3"
+          }
+        ]
+      },
+      {
+        "id": "8",
+        "title": "Mercado de San Miguel",
+        "date": "1 May",
+        "address": "Pl. de San Miguel, s/n, Centro, 28005 Madrid, Spain",
+        "content": "A very, very quick stroll (mosh crossing) through the Mercado de San Miguel. Truly not enough space to pull out a phone so our photos are limited to Mom's shot of some pretty olives.",
+        "photos": [
+          {
+            "id": "G1"
+          }
+        ]
+      },
+      {
+        "id": "9",
+        "title": "Catedral de Santa María la Real de la Almudena & Palacio Real de Madrid",
+        "date": "1 May",
+        "address": "Royal Palace of Madrid, Spain",
+        "content": "We arrived at the Palacio Real de Madrid after a short tour of the Cathedral.",
+        "photos": [
+          {
+            "id": "H1"
+          },
+          {
+            "id": "H2"
+          },
+          {
+            "id": "H3"
+          },
+          {
+            "id": "H4"
+          }
+        ]
+      },
+      {
+        "id": "10",
+        "title": "Dinner at EL miniBAR",
+        "date": "1 May",
+        "address": "C/ del Mesón de Paños, 1, Centro, 28013 Madrid, Spain",
+        "content": "My master googling and tour guiding skills led us to an awesome tapas restaurant between the Opera house and Plaza Mayor.",
+        "photos": [
+          {
+            "id": "I1"
+          }
+        ]
+      },
+      {
+        "id": "11",
+        "title": "Ambrosio & A Concert in Puerta del Sol ",
+        "date": "1 May",
+        "address": "Calle de la Bolsa, 5, Centro, 28012 Madrid, Spain",
+        "content": "A bit of aimless wandering in the direction of Puerta del Sol paid off when we stopped at Ambrosio. We all loved it here, it might be our favorite bar of the trip! Great drinks, good energy, friendly staff, free raciónes.",
+        "photos": [
+          {
+            "id": "J1"
+          },
+          {
+            "id": "J2",
+            "caption": "The band playing was called 'Lisasinson'. They had a 90's power pop, twee rocker vibe. \"Tontipop\""
+          },
+          {
+            "id": "J3"
+          }
+        ]
+      },
+      {
+        "id": "12",
+        "title": "Museo Nacional del Prado",
+        "date": "2 May",
+        "address": "Museo Nacional del Prado, Madrid, Spain",
+        "content": "We woke up not so early, grabbed a quick bite to eat in Chueca, and stood in a very long line to get into the Prado. We all loved the museum; highlights were the dark Goya pieces and the room dedicated to Hieronymus Bosch.",
+        "photos": [
+          {
+            "id": "K1"
+          },
+          {
+            "id": "K2",
+            "caption": "I was reprimanded by the nicest security guard who simply pointed at my phone and wagged their finger."
+          }
+        ]
+      },
+      {
+        "id": "13",
+        "title": "A stroll through Parque de El Retiro",
+        "date": "2 May",
+        "address": "Parque de El Retiro, Madrid, Spain",
+        "content": "Jet leg plus three hours in the museum meant we were exhausted, so we took it easy and strolled through Parque de El Retiro.",
+        "photos": [
+          {
+            "id": "L1"
+          }
+        ]
+      },
+      {
+        "id": "14",
+        "title": "Dinner at Txirimiri Ferraz",
+        "date": "2 May",
+        "address": "C. de Ferraz, 38, Moncloa - Aravaca, 28008 Madrid, Spain",
+        "content": "Foreshadowing our upcoming trip to the Basque country, we ended up at a Basque restaurant (not pictured). We tried our hand at navigating the Madrid Metro!",
+        "photos": [
+          {
+            "id": "M1"
+          }
+        ]
+      },
+      {
+        "id": "15", 
+        "title": "Partying in Chueca",
+        "date": "2 May",
+        "address": "C. de Gravina, 13, Centro, 28004 Madrid, Spain",
+        "content": "The area of Madrid we stayed in is called Chueca which is known for its nightlife. A local pointed us to a nearby bar called Escape when my mom explained we were looking for a place to dance!",
+        "photos": [
+          {
+            "id": "N1",
+            "caption": "Mom singing karaoke. The crowd went wild for 'Sweet Caroline'."
+          },
+          {
+            "id": "N2"
+          },
+          {
+            "id": "N3",
+            "caption": "Our new bestie from Poland!"
           }
         ]
       }
