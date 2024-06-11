@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "photos": "rm -rf dist/images/donostia/thumbs/* && cp -R -u -p dist/images/donostia/photos/* dist/images/donostia/thumbs/ && mogrify -resize 50% dist/images/donostia/thumbs/*",
+    "photos": "rm -rf dist/images/gernika/thumbs/* && cp -R -u -p dist/images/gernika/photos/* dist/images/gernika/thumbs/ && mogrify -resize 50% dist/images/gernika/thumbs/*",
     "build": "webpack --config webpack.prod.js",
     "lint": "eslint src/"
   },
