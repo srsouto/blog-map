@@ -353,7 +353,7 @@
       },
       {
         "id": "6",
-        "title": "Don't jump!",
+        "title": "Don't Jump!",
         "date": "3 May",
         "coords": [
           43.322942,
@@ -404,7 +404,159 @@
       "mobile": 12
     },
     "entries": [
-      
+      {
+        "id": "1",
+        "title": "First Day in Gernika, More Family at Marko Pollo",
+        "date": "4 May",
+        "address": "Santa Ana Auzoa, 16, 48315 Kortezubi, Bizkaia, Spain",
+        "content": "We arrived in Gernika and made our way to our favorite spot to eat (and Ainhoa's least favorite 😉)!",
+        "photos": [
+          {
+            "id": "A1"
+          },
+          {
+            "id": "A2"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "title": "Coffee in the mountains at LEZIKA",
+        "date": "4 May",
+        "address": "Basondo Auzoa, 8, 48315 Kortezubi, Bizkaia, Spain",
+        "content": "We drove up the hill from Marko Pollo to drink some coffee and cerveza's. Dad and I hiked further up the mountain to check out the entrace to Santimamiñeko cave.",
+        "photos": [
+          {
+            "id": "B1"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "title": "Morning on Ainhoa's Patio",
+        "date": "5 May",
+        "address": "Nafarroa Kalea, 22, 48300 Gernika-Lumo, Bizkaia",
+        "content": "Views from the back patio of Ainhoa's apartment on the outskirts of Gernika. Aitziber was actually about to move in and Ainhoa was moving into an apartment in the town center.",
+        "photos": [
+          {
+            "id": "C1"
+          },
+          {
+            "id": "C2"
+          },
+          {
+            "id": "C3"
+          }
+        ]
+      },
+      {
+        "id": "4",
+        "title": "Parading in the Town Center",
+        "date": "5 May",
+        "coords": [
+          43.313855,
+          -2.678781
+        ],
+        "content": "The children of Gernika were lining up, about to parade through the streets. They are wearing traditional Basque attire; some were even playing the txistu and tabor! Among the children was the daughter of our good friend Ruben.",
+        "photos": [
+          {
+            "id": "D1"
+          },
+          {
+            "id": "D2"
+          }
+        ]
+      },
+      {
+        "id": "5",
+        "title": "Pintxos with Íñigo, Taberna Auzokoa",
+        "date": "5 May",
+        "address": "Pablo Picasso Kalea, 9, 48300 Gernika-Lumo, Bizkaia, Spain",
+        "content": "Íñigo is Juanjo's brother, who came to see us from Durango. We found ourselves at this Pintxo place many times. Dad also saw a restaurant up the street with Grandma's maiden name.",
+        "photos": [
+          {
+            "id": "E2"
+          },
+          {
+            "id": "E1"
+          }
+        ]
+      },
+      {
+        "id": "6",
+        "title": "Visitng Family in Abaroa",
+        "date": "5 May",
+        "coords": [
+          43.392453,
+          -2.702700
+        ],
+        "content": "As is tradition, we showed up un-announced to the homestead near Sukarrieta where our cousins live. Pictured are siblings Teresa and Jose Luis, the children of Filipa {idk}. It was a team effort finding the correct road and correct building from memory!",
+        "photos": [
+          {
+            "id": "F1"
+          },
+          {
+            "id": "F2"
+          },
+          {
+            "id": "F3"
+          },
+          {
+            "id": "F4"
+          }
+        ]
+      },
+      {
+        "id": "7",
+        "title": "Selfies in Mundaka",
+        "date": "5 May",
+        "coords": [
+          43.407870,
+          -2.696782
+        ],
+        "content": "We drove down from Abaroa and walked to the docks of Mundaka.",
+        "photos": [
+          {
+            "id": "G1"
+          },
+          {
+            "id": "G2"
+          },
+          {
+            "id": "G3"
+          }
+        ]
+      },
+      {
+        "id": "8",
+        "title": "Playa Laga",
+        "date": "5 May",
+        "coords": [
+          43.408964,
+          -2.656557
+        ],
+        "content": "We made our way to the other side of the river to check out this gorgeous beach. I think it was windy.",
+        "photos": [
+          {
+            "id": "H1"
+          },
+          {
+            "id": "H2"
+          }
+        ]
+      },
+      {
+        "id": "9",
+        "title": "Looking Across Playa Laida to Sukarrieta",
+        "date": "5 May",
+        "address": "Antzora, 24, 48311 Ibarranguelua, Biscay, Spain",
+        "content": "Finishing a long day eating and drinking at Atxarre Taberna, another favorite spot of Ainhoa's, which looks out over the river.",
+        "photos": [
+          {
+            "id": "I1"
+          }
+        ]
+      }
     ]
   }
 ]
