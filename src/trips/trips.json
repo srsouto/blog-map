@@ -614,5 +614,169 @@
         ]
       }
     ]
+  },
+  {
+    "id": "guisamo",
+    "title": "Guisamo & A Coruña",
+    "subtitle": "May 6 - 7",
+    "linkTitle": "Guisamo & A Coruña, May 6 - 7",
+    "mapCenter": {
+      "lat": 43.2924703,
+      "lng": -8.2652368
+    },
+    "mapZoomLevels": {
+      "desktop": 11,
+      "mobile": 11
+    },
+    "entries": [
+      {
+        "id": "1",
+        "title": "Rua, 2, Guisamo",
+        "date": "6 May",
+        "address": "Rua Brea, 2, 15640 A Coruña, Spain",
+        "content": "Gil / Souto household in Guisamo.",
+        "photos": [
+          {
+            "id": "A1"
+          },
+          {
+            "id": "A2"
+          },
+          {
+            "id": "A3"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "title": "Cemitério de Guísamo",
+        "date": "6 May",
+        "address": "Cemitério de Guísamo, 15640 Bergondo, A Coruña, Spain",
+        "content": "Visiting the grave site of our family members.",
+        "photos": [
+          {
+            "id": "B1"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "title": "Praia do Pedrido",
+        "date": "6 May",
+        "coords": [
+          43.327535,
+          -8.210861
+        ],
+        "content": "Checking out a beach at the mouth of the Rio Mandeo, the river on which The Caneiros is held.",
+        "photos": [
+          {
+            "id": "C1"
+          },
+          {
+            "id": "C2"
+          }
+        ]
+      },
+      {
+        "id": "4",
+        "title": "Puerto de Lorbe",
+        "date": "6 May",
+        "address": "Puerto de Lorbe, 15177 Oleiros, A Coruña, Spain",
+        "content": "Next stop was Puerto de Lorbe where Angel and Uncle John used to go fishing.",
+        "photos": [
+          {
+            "id": "D1"
+          },
+          {
+            "id": "D2",
+            "caption": "\"Send this to John.\" - Angel"
+          }
+        ]
+      },
+      {
+        "id": "5",
+        "title": "Marina Coruña",
+        "date": "7 May",
+        "coords": [
+          43.368646,
+          -8.385741
+        ],
+        "content": "We started our next day with a tour around A Coruña. This spot gave us a great view of the Castelo de Santo Antón. Angel believes this port is likely where the Souto's started their boat trip across the Atlantic.",
+        "photos": [
+          {
+            "id": "E1"
+          },
+          {
+            "id": "E2"
+          },
+          {
+            "id": "E3"
+          }
+        ]
+      },
+      {
+        "id": "6",
+        "title": "Octopus Overlook",
+        "date": "7 May",
+        "coords": [
+          43.377181,
+          -8.428928
+        ],
+        "content": "A view of A Coruña and the Torre de Hércules",
+        "photos": [
+          {
+            "id": "F1"
+          },
+          {
+            "id": "F2"
+          }
+        ]
+      },
+      {
+        "id": "7",
+        "title": "Torre de Hércules",
+        "date": "7 May",
+        "address": "Torre de Hércules, 15002 A Coruña, Spain",
+        "content": "Ancient Roman lighthouse that was originally built in the 1st century!",
+        "photos": [
+          {
+            "id": "G1"
+          },
+          {
+            "id": "G2"
+          }
+        ]
+      },
+      {
+        "id": "8",
+        "title": "Praza de María Pita",
+        "date": "7 May",
+        "address": "Pr. de María Pita, S/N, 15001 A Coruña, Spain",
+        "content": "More drinks, more croquettes, more relaxing in Galicia.",
+        "photos": [
+          {
+            "id": "H1"
+          }
+        ]
+      },
+      {
+        "id": "9",
+        "title": "The Chicken Farm",
+        "date": "7 May",
+        "coords": [
+          43.165615,
+          -8.085602
+        ],
+        "content": "Angel took us on a tour of his chicken farm. We've never seen anything like it before... 30,000 chickens!",
+        "photos": [
+          {
+            "id": "I1"
+          },
+          {
+            "id": "I2"
+          }
+        ]
+      }
+    ]
   }
 ]
