@@ -47,8 +47,8 @@ const Map = ({ onZoomChange, trips, selectedTrip }) => {
     }
   }
 
-  let center = { lat: 40.4380986, lng: -3.8443432 };
-  let zoomLevels = { desktop: 7, mobile: 6 };
+  let center = { lat: 42.0902321, lng: -5.0199736 };
+  let zoomLevels = { desktop: 8, mobile: 7 };
   if (selectedTrip) {
     center = selectedTrip.mapCenter;
     zoomLevels = selectedTrip.mapZoomLevels;

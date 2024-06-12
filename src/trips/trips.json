@@ -558,5 +558,61 @@
         ]
       }
     ]
+  },
+  {
+    "id": "oviedo",
+    "title": "Oviedo & Playa de las Catedrales",
+    "subtitle": "May 6",
+    "linkTitle": "Oviedo & Playa de las Catedrales, May 6",
+    "mapCenter": {
+      "lat": 43.472642,
+      "lng": -6.6361329
+    },
+    "mapZoomLevels": {
+      "desktop": 10,
+      "mobile": 10
+    },
+    "entries": [
+      {
+        "id": "1",
+        "title": "Stopped for Lunch in Oviedo",
+        "date": "6 May",
+        "address": "Pl. Alfonso II el Casto, 8, 33003 Oviedo, Asturias, Spain",
+        "content": "Ainhoa sent us off with some jamón, which we decided to eat in the charming capital city of Asturias.",
+        "photos": [
+          {
+            "id": "A1"
+          },
+          {
+            "id": "A2"
+          },
+          {
+            "id": "A3"
+          },
+          {
+            "id": "A4",
+            "caption": "He's pouring cider, I swear!"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "title": "Playa de las Catedrales",
+        "date": "6 May",
+        "address": "Playa de Las Catedrales, Spain",
+        "content": "Angel insisted we stop at this beach, and we were glad we did! Unfortunately we weren't there for low tide when you can actually walk on the beach.",
+        "photos": [
+          {
+            "id": "B1"
+          },
+          {
+            "id": "B2"
+          },
+          {
+            "id": "B3"
+          }
+        ]
+      }
+    ]
   }
 ]
