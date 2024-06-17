@@ -20,7 +20,7 @@ module.exports = merge(common, {
   mode: 'production',
   devtool: 'source-map',
   plugins: [
-    new SitemapPlugin('https://roadtrips.iwazaru.fr', sitemapPaths),
+    new SitemapPlugin('http://blog.stevensouto.com', sitemapPaths),
   ],
   optimization: {
     minimize: true,

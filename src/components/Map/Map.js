@@ -79,6 +79,8 @@ const Map = ({ onZoomChange, trips, selectedTrip }) => {
     </a>
   );
 
+  console.log(process.env.GOOGLE_MAPS_API_KEY);
+
   return (
     <Fragment>
       <HomeButton shown={!!selectedTrip} />
