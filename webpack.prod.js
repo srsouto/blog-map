@@ -1,5 +1,6 @@
 const merge = require('webpack-merge');
 const SitemapPlugin = require('sitemap-webpack-plugin').default;
+const webpack = require('webpack');
 const slugify = require('slugify');
 const TerserPlugin = require('terser-webpack-plugin');
 
@@ -21,6 +22,7 @@ module.exports = merge(common, {
   devtool: 'source-map',
   plugins: [
     new SitemapPlugin('http://blog.stevensouto.com', sitemapPaths),
+    new webpack.EnvironmentPlugin(['GOOGLE_MAPS_API_KEY']),
   ],
   optimization: {
     minimize: true,

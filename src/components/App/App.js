@@ -41,19 +41,16 @@ class App extends React.Component {
       selectedTrip.entries.forEach((entry, i) => {
         if (entry.address) {
           requestsForCoords.push(fromAddress(entry.address).then(({results}) => {
-            console.log("result", results);
             const location = results[0].geometry.location
             selectedTrip.entries[i].coords = [location.lat, location.lng];
           }))
         }
       });
       Promise.all(requestsForCoords).then(() => {
-        console.log("called", selectedTrip);
         this.setState({ trips, selectedTrip });
       })
     }
     if (!selectedTrip) {
-      console.log("called outside promise", selectedTrip);
       this.setState({ trips, selectedTrip });
     }
     return null;

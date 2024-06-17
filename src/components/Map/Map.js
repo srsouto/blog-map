@@ -17,7 +17,6 @@ const Map = ({ onZoomChange, trips, selectedTrip }) => {
   const [markers, setMarkers] = useState([]);
 
   useEffect(() => {
-    console.log("selectedTrip changed");
     createMarkers();
   }, [trips, selectedTrip]);
 
@@ -78,8 +77,6 @@ const Map = ({ onZoomChange, trips, selectedTrip }) => {
       </svg>
     </a>
   );
-
-  console.log(process.env.GOOGLE_MAPS_API_KEY);
 
   return (
     <Fragment>
