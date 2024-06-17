@@ -21,7 +21,7 @@ module.exports = merge(common, {
   mode: 'production',
   devtool: 'source-map',
   plugins: [
-    new SitemapPlugin('http://blog.stevensouto.com', sitemapPaths),
+    new SitemapPlugin('https://blog.stevensouto.com', sitemapPaths),
     new webpack.EnvironmentPlugin(['GOOGLE_MAPS_API_KEY']),
   ],
   optimization: {

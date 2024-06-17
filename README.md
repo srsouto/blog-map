@@ -1,6 +1,6 @@
 # Road Trips
 
-This repository contains the source code and content of my [travel blog](https://doesnt.exist.biz/).
+This repository contains the source code and content of my [travel blog](https://blog.stevensouto.com).
 
 All the source code is available under the
 [MIT License](https://opensource.org/licenses/MIT).
