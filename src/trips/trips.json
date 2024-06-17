@@ -10,7 +10,7 @@
     },
     "mapZoomLevels": {
       "desktop": 15,
-      "mobile": 15
+      "mobile": 14
     },
     "entries": [
       {
@@ -265,7 +265,7 @@
     },
     "mapZoomLevels": {
       "desktop": 16,
-      "mobile": 16
+      "mobile": 15
     },
     "entries": [
       {
@@ -570,7 +570,7 @@
     },
     "mapZoomLevels": {
       "desktop": 10,
-      "mobile": 10
+      "mobile": 8
     },
     "entries": [
       {
@@ -626,7 +626,7 @@
     },
     "mapZoomLevels": {
       "desktop": 11,
-      "mobile": 11
+      "mobile": 9
     },
     "entries": [
       {
@@ -790,7 +790,7 @@
     },
     "mapZoomLevels": {
       "desktop": 11,
-      "mobile": 11
+      "mobile": 10
     },
     "entries": [
       {
