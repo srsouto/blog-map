@@ -1,5 +1,6 @@
-# Road Trips
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6edaf966-0a14-4a06-ab05-4648fc9734fc/deploy-status)](https://app.netlify.com/sites/spain-blog/deploys)
 
+# Spain Blog
 This repository contains the source code and content of my [travel blog](https://blog.stevensouto.com).
 
 All the source code is available under the
