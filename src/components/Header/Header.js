@@ -10,8 +10,9 @@ export default function Header({ selectedTrip }) {
   let subtitle = 'Iberian travel journal!';
   let link = '/';
   let logo = (
-    <img className="logo" src="/images/icons/favicon-32x32.png" height='32'
-      title="Icon by Freepik.com from Flaticon | CC BY 3.0"
+    <img className="logo"
+      src={`https://res.cloudinary.com/${process.env.CLOUDINARY_CLOUD_NAME}/image/upload/w_32,h_32/images/icons/favicon-32x32`}
+      height='32' title="Icon by Freepik.com from Flaticon | CC BY 3.0"
     />
   );
   if (selectedTrip) {

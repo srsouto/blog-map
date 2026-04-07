@@ -85,7 +85,7 @@ const Map = ({ onZoomChange, trips, selectedTrip }) => {
       <div className="Map">
         <GoogleMapReact onClick={onClick}
           options={() => ({ fullscreenControl: false })}
-          bootstrapURLKeys={{ key: process.env.GOOGLE_MAPS_API_KEY || '' }}
+          bootstrapURLKeys={{ key: process.env.GOOGLE_MAPS_API_KEY || '', loading: 'async' }}
           zoom={getZoomForWidth(zoomLevels)}
           center={center}
           onChange={onChange}
