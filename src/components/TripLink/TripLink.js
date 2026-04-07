@@ -8,7 +8,9 @@ export default function TripLink({ trip }) {
   return (
     <Link to={`/${trip.id}/`}>
       <div className="TripLink">
-        {trip.linkTitle}
+        <div className="TripLink-label">{trip.linkTitle}</div>
+        <div className="TripLink-stem" />
+        <div className="TripLink-dot" />
       </div>
     </Link>
   );
