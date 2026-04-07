@@ -1,7 +1,5 @@
-const merge = require('webpack-merge');
-const history = require('connect-history-api-fallback');
-const convert = require('koa-connect');
-const path = require('path');
+const { merge } = require('webpack-merge');
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 
 const common = require('./webpack.common.js');
@@ -9,22 +7,33 @@ const common = require('./webpack.common.js');
 module.exports = merge(common, {
   mode: 'development',
   devtool: 'inline-source-map',
-  serve: {
-    add: (app, middleware, options) => {
-      app.use(convert(history()));
-    },
-  },
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+    static: { directory: require('path').join(__dirname, 'dist') },
     compress: true,
     hot: true,
     port: 8080,
     historyApiFallback: true,
   },
-  resolve: {
-    alias: { 'react-dom': '@hot-loader/react-dom' }
-  },
   plugins: [
-    new Dotenv()
+    new Dotenv(),
+    new ReactRefreshWebpackPlugin(),
   ],
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+            plugins: [
+              '@babel/plugin-proposal-class-properties',
+              require.resolve('react-refresh/babel'),
+            ],
+          },
+        },
+      },
+    ],
+  },
 });

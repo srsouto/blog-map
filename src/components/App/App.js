@@ -1,8 +1,7 @@
-/* global module, google */
+/* global google */
 
 import React, { Fragment } from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
-import { hot } from 'react-hot-loader';
 import { createBrowserHistory } from 'history';
 
 import Entry from '../Entry/Entry';
@@ -110,4 +109,4 @@ class App extends React.Component {
   }
 }
 
-export default hot(module)(App);
+export default App;

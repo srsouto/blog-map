@@ -1,56 +1,43 @@
 const path = require('path');
-
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
-  entry: [
-    '@babel/polyfill',
-    './src/index.js'
-  ],
+  entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.[name].[hash:6].js',
-    chunkFilename: 'bundle.[name].[chunkhash:6].js',
+    filename: 'bundle.[name].[contenthash:6].js',
+    chunkFilename: 'bundle.[name].[contenthash:6].js',
     publicPath: '/',
   },
-  devtool: 'inline-source-map',
   module: {
     rules: [
       {
         test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
+        exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['env', 'react'],
-            plugins: ['react-hot-loader/babel', 'transform-class-properties'],
-          }
-        }
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+            plugins: ['@babel/plugin-proposal-class-properties'],
+          },
+        },
       },
       {
         test: /\.scss$/,
-        use: [
-          { loader: 'style-loader' },
-          { loader: 'css-loader' },
-          { loader: 'sass-loader' },
-        ]
-      }
-    ]
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+    ],
   },
   plugins: [
     new CleanWebpackPlugin({
-      cleanOnceBeforeBuildPatterns: ['dist']
+      cleanOnceBeforeBuildPatterns: ['dist'],
     }),
     new HtmlWebpackPlugin({ template: 'public/index.html' }),
   ],
   optimization: {
     splitChunks: {
       chunks: 'all',
-    }
-  }
+    },
+  },
 };
-
-
-
