@@ -34,16 +34,28 @@
 }
 
 .Pin-preview-thumbs {
-  display: flex;
+  display: grid;
   gap: 4px;
+  grid-template-columns: repeat(2, 180px);
 }
 
 .Pin-preview-thumb {
   border-radius: 3px;
   display: block;
-  height: 70px;
+  height: 120px;
   object-fit: cover;
-  width: 100px;
+  width: 180px;
+}
+
+@media (max-width: 768px) {
+  .Pin-preview-thumbs {
+    grid-template-columns: repeat(2, 110px);
+  }
+
+  .Pin-preview-thumb {
+    height: 75px;
+    width: 110px;
+  }
 }
 
 .Pin {

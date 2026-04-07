@@ -22,7 +22,7 @@ export default function Pin({ href, children, entry, tripId }) {
           <img
             key={photo.id}
             className="Pin-preview-thumb"
-            src={`https://res.cloudinary.com/${process.env.CLOUDINARY_CLOUD_NAME}/image/upload/w_100,h_70,c_fill,q_auto,f_auto/images/${tripId}/photos/${photo.id}`}
+            src={`https://res.cloudinary.com/${process.env.CLOUDINARY_CLOUD_NAME}/image/upload/w_360,h_240,c_fill,q_auto,f_auto/images/${tripId}/photos/${photo.id}`}
             alt=""
           />
         ))}
