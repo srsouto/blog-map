@@ -24,7 +24,7 @@ export default function Entry(props) {
   });
 
   let previewPhoto = entry.previewPhoto || entry.photos && entry.photos[0].id;
-  const previewThumbnailUrl = `https://roadtrips.iwazaru.fr/images/${tripId}/thumbs/${previewPhoto}.jpg`;
+  const previewThumbnailUrl = `https://res.cloudinary.com/${process.env.CLOUDINARY_CLOUD_NAME}/image/upload/w_800,c_limit,q_auto,f_auto/images/${tripId}/photos/${previewPhoto}`;
 
   const onOverlayClick = () => props.history.push(`/${trip.id}/`);
 

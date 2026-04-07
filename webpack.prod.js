@@ -22,7 +22,7 @@ module.exports = merge(common, {
   devtool: 'source-map',
   plugins: [
     new SitemapPlugin('https://blog.stevensouto.com', sitemapPaths),
-    new webpack.EnvironmentPlugin(['GOOGLE_MAPS_API_KEY']),
+    new webpack.EnvironmentPlugin(['GOOGLE_MAPS_API_KEY', 'CLOUDINARY_CLOUD_NAME']),
   ],
   optimization: {
     minimize: true,

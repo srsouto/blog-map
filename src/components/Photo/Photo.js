@@ -15,7 +15,7 @@ export default function Photo(props) {
     <Fragment>
       <Overlay onClick={onClick} className="Photo-overlay" zIndex={300} />
       <img onClick={onClick} className="Photo"
-        src={`/images/${tripId}/photos/${photoId}.jpg`} />
+        src={`https://res.cloudinary.com/${process.env.CLOUDINARY_CLOUD_NAME}/image/upload/q_auto,f_auto/images/${tripId}/photos/${photoId}`} />
     </Fragment>
   );
 }

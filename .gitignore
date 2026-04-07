@@ -3,4 +3,6 @@ yarn-error.log
 dist/bundle*
 dist/index.html
 dist/sitemap*
+dist/images
 .env
+upload-to-cloudinary.js
