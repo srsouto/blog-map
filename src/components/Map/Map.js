@@ -13,7 +13,7 @@ import { getZoomForWidth } from '../../utils';
 
 import './Map.scss';
 
-const Map = ({ onZoomChange, trips, selectedTrip, adventureId }) => {
+const Map = ({ onZoomChange, onGoogleApiLoaded, trips, selectedTrip, adventureId }) => {
   const [markers, setMarkers] = useState([]);
 
   useEffect(() => {
@@ -91,6 +91,8 @@ const Map = ({ onZoomChange, trips, selectedTrip, adventureId }) => {
           zoom={getZoomForWidth(zoomLevels)}
           center={center}
           onChange={onChange}
+          yesIWantToUseGoogleMapApiInternals
+          onGoogleApiLoaded={onGoogleApiLoaded}
         >
           {markers}
         </GoogleMapReact>
@@ -101,6 +103,7 @@ const Map = ({ onZoomChange, trips, selectedTrip, adventureId }) => {
 
 Map.propTypes = {
   history: PropTypes.object.isRequired,
+  onGoogleApiLoaded: PropTypes.func.isRequired,
   onZoomChange: PropTypes.func.isRequired,
   selectedTrip: PropTypes.object,
   trips: PropTypes.array,

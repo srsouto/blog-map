@@ -24,15 +24,34 @@ class App extends React.Component {
 
   constructor(props) {
     super(props);
+    this._pendingTripLoad = null;
     this.state = {
       trips: null,
       selectedTrip: null,
       currentZoom: null,
       adventureId: null,
+      mapsApiReady: false,
     };
   }
 
+  _onGoogleApiLoaded() {
+    this.setState({ mapsApiReady: true });
+    if (this._pendingTripLoad) {
+      const { trips, selectedTrip, adventureId } = this._pendingTripLoad;
+      this._pendingTripLoad = null;
+      this._geocodeAndSetState(trips, selectedTrip, adventureId);
+    }
+  }
+
   _onTripLoad(trips, selectedTrip, adventureId) {
+    if (!this.state.mapsApiReady) {
+      this._pendingTripLoad = { trips, selectedTrip, adventureId };
+      return;
+    }
+    this._geocodeAndSetState(trips, selectedTrip, adventureId);
+  }
+
+  _geocodeAndSetState(trips, selectedTrip, adventureId) {
     if (selectedTrip) {
       const requestsForCoords = [];
       selectedTrip.entries.forEach((entry, i) => {
@@ -47,17 +66,15 @@ class App extends React.Component {
                 reject(new Error(`Geocoding failed: ${status}`));
               }
             });
-          }))
+          }));
         }
       });
       Promise.all(requestsForCoords).then(() => {
         this.setState({ trips, selectedTrip, adventureId });
-      })
-    }
-    if (!selectedTrip) {
+      });
+    } else {
       this.setState({ trips, selectedTrip, adventureId });
     }
-    return null;
   }
 
   _onMapZoomChange(zoom) {
@@ -79,7 +96,8 @@ class App extends React.Component {
             <Fragment>
               <Header selectedTrip={this.state.selectedTrip} adventureId={this.state.adventureId} />
               <Map {...this.state}
-                onZoomChange={zoom => this._onMapZoomChange(zoom)} />
+                onZoomChange={zoom => this._onMapZoomChange(zoom)}
+                onGoogleApiLoaded={() => this._onGoogleApiLoaded()} />
               <Route exact path="/:adventureId/" render={tripSelector} />
               <Route path="/:adventureId/:tripId/" render={tripSelector} />
               <Route path="/:adventureId/:tripId/:entryId-:entrySlug" component={Entry} />
