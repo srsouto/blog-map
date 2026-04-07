@@ -13,7 +13,7 @@ import { getZoomForWidth } from '../../utils';
 
 import './Map.scss';
 
-const Map = ({ onZoomChange, trips, selectedTrip }) => {
+const Map = ({ onZoomChange, trips, selectedTrip, adventureId }) => {
   const [markers, setMarkers] = useState([]);
 
   useEffect(() => {
@@ -30,7 +30,9 @@ const Map = ({ onZoomChange, trips, selectedTrip }) => {
         return (
           <Pin key={`${entry.trip}-${entry.id}`}
             lat={entry.coords[0]} lng={entry.coords[1]}
-            href={`/${selectedTrip.id}/${entry.id}-${entrySlug}`}
+            href={`/${adventureId}/${selectedTrip.id}/${entry.id}-${entrySlug}`}
+            entry={entry}
+            tripId={selectedTrip.id}
           >
             {entry.id}
           </Pin>
@@ -40,7 +42,7 @@ const Map = ({ onZoomChange, trips, selectedTrip }) => {
       setMarkers(trips.map(trip => {
         const { lat, lng } = trip.mapCenter;
         return (
-          <TripLink key={`${trip.id}`} lat={lat} lng={lng} trip={trip} />
+          <TripLink key={`${trip.id}`} lat={lat} lng={lng} trip={trip} adventureId={adventureId} />
         );
       }));
     }
@@ -80,7 +82,7 @@ const Map = ({ onZoomChange, trips, selectedTrip }) => {
 
   return (
     <Fragment>
-      <HomeButton shown={!!selectedTrip} />
+      <HomeButton shown={!!selectedTrip} adventureId={adventureId} />
       {githubButton}
       <div className="Map">
         <GoogleMapReact onClick={onClick}
@@ -102,6 +104,7 @@ Map.propTypes = {
   onZoomChange: PropTypes.func.isRequired,
   selectedTrip: PropTypes.object,
   trips: PropTypes.array,
+  adventureId: PropTypes.string,
 };
 
 export default withRouter(Map);

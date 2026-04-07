@@ -13,12 +13,12 @@ import trips from '../../trips/trips.json';
 
 export default function Entry(props) {
 
-  const { tripId, entryId, entrySlug } = props.match.params;
+  const { adventureId, tripId, entryId, entrySlug } = props.match.params;
   const trip = trips.find(trip => trip.id === tripId);
   const entry = trip.entries.find(entry => entry.id === entryId);
 
   const thumbnails = entry.photos && entry.photos.map(photo => {
-    return (<Link key={photo.id} to={`/${tripId}/${entryId}-${entrySlug}/${photo.id}`}>
+    return (<Link key={photo.id} to={`/${adventureId}/${tripId}/${entryId}-${entrySlug}/${photo.id}`}>
       <Thumbnail tripId={tripId} {...photo} />
     </Link>);
   });
@@ -26,7 +26,7 @@ export default function Entry(props) {
   let previewPhoto = entry.previewPhoto || entry.photos && entry.photos[0].id;
   const previewThumbnailUrl = `https://res.cloudinary.com/${process.env.CLOUDINARY_CLOUD_NAME}/image/upload/w_800,c_limit,q_auto,f_auto/images/${tripId}/photos/${previewPhoto}`;
 
-  const onOverlayClick = () => props.history.push(`/${trip.id}/`);
+  const onOverlayClick = () => props.history.push(`/${adventureId}/${trip.id}/`);
 
   return (
     <Fragment>
@@ -38,7 +38,7 @@ export default function Entry(props) {
           <meta property="og:title"
             content={`${entry.id}. ${entry.title} - ${trip.title}`} />
           <meta property="og:url"
-            content={`${process.env.SITE_URL}/${tripId}/${entry.id}-${entrySlug}`} />
+            content={`${process.env.SITE_URL}/${adventureId}/${tripId}/${entry.id}-${entrySlug}`} />
           <meta property="og:image" content={previewThumbnailUrl} />
           <meta property="og:description" content={entry.content} />
         </Helmet>
@@ -46,7 +46,7 @@ export default function Entry(props) {
         <div className="Entry-id">
           <Pin>{entry.id}</Pin>
         </div>
-        <Link to={`/${trip.id}/`}>
+        <Link to={`/${adventureId}/${trip.id}/`}>
           <span className="Entry-close-button">×</span>
         </Link>
         <h1 className="Entry-title">{entry.title}</h1>

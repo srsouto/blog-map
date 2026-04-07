@@ -1,12 +1,13 @@
-/* global module */
+/* global module, google */
 
 import React, { Fragment } from 'react';
-import { Router, Route } from 'react-router-dom';
+import { Router, Route, Switch } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
 import { createBrowserHistory } from 'history';
 
 import Entry from '../Entry/Entry';
 import Header from '../Header/Header';
+import Landing from '../Landing/Landing';
 import Map from '../Map/Map';
 import Photo from '../Photo/Photo';
 import TripSelector from '../TripSelector/TripSelector';
@@ -27,10 +28,11 @@ class App extends React.Component {
       trips: null,
       selectedTrip: null,
       currentZoom: null,
+      adventureId: null,
     };
   }
 
-  _onTripLoad(trips, selectedTrip) {
+  _onTripLoad(trips, selectedTrip, adventureId) {
     if (selectedTrip) {
       const requestsForCoords = [];
       selectedTrip.entries.forEach((entry, i) => {
@@ -49,38 +51,42 @@ class App extends React.Component {
         }
       });
       Promise.all(requestsForCoords).then(() => {
-        this.setState({ trips, selectedTrip });
+        this.setState({ trips, selectedTrip, adventureId });
       })
     }
     if (!selectedTrip) {
-      this.setState({ trips, selectedTrip });
+      this.setState({ trips, selectedTrip, adventureId });
     }
     return null;
   }
 
   _onMapZoomChange(zoom) {
     if (zoom <= 5 && this.state.currentZoom && zoom != this.state.currentZoom) {
-      history.push('/');
+      history.push(`/${this.state.adventureId}/`);
     }
     this.setState({ currentZoom: 5 });
   }
 
   render() {
-
     const tripSelector = (props) => <TripSelector {...props}
-      onLoad={(trips, trip) => this._onTripLoad(trips, trip)} />;
+      onLoad={(trips, trip, adventureId) => this._onTripLoad(trips, trip, adventureId)} />;
 
     return (
       <Router history={history}>
-        <Fragment>
-          <Header selectedTrip={this.state.selectedTrip} />
-          <Map {...this.state}
-            onZoomChange={zoom => this._onMapZoomChange(zoom)} />
-          <Route exact path="/" render={tripSelector} />
-          <Route path="/:tripId/" render={tripSelector} />
-          <Route path="/:tripId/:entryId-:entrySlug" component={Entry} />
-          <Route path="/:tripId/:entryId-:entrySlug/:photoId" component={Photo} />
-        </Fragment>
+        <Switch>
+          <Route exact path="/" component={Landing} />
+          <Route>
+            <Fragment>
+              <Header selectedTrip={this.state.selectedTrip} adventureId={this.state.adventureId} />
+              <Map {...this.state}
+                onZoomChange={zoom => this._onMapZoomChange(zoom)} />
+              <Route exact path="/:adventureId/" render={tripSelector} />
+              <Route path="/:adventureId/:tripId/" render={tripSelector} />
+              <Route path="/:adventureId/:tripId/:entryId-:entrySlug" component={Entry} />
+              <Route path="/:adventureId/:tripId/:entryId-:entrySlug/:photoId" component={Photo} />
+            </Fragment>
+          </Route>
+        </Switch>
       </Router>
     );
   }

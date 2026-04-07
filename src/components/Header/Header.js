@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import './Header.scss';
 
-export default function Header({ selectedTrip }) {
+export default function Header({ selectedTrip, adventureId }) {
 
   let title = 'Souto 2024';
   let subtitle = 'Iberian travel journal!';
@@ -18,7 +18,7 @@ export default function Header({ selectedTrip }) {
   if (selectedTrip) {
     title = selectedTrip.title;
     subtitle = selectedTrip.subtitle;
-    link = `/${selectedTrip.id}/`;
+    link = `/${adventureId}/${selectedTrip.id}/`;
     logo = null;
   }
 
@@ -34,4 +34,5 @@ export default function Header({ selectedTrip }) {
 
 Header.propTypes = {
   selectedTrip: PropTypes.object,
+  adventureId: PropTypes.string,
 };

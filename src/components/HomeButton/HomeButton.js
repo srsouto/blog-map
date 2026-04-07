@@ -7,7 +7,7 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons/faArrowLeft';
 
 import './HomeButton.scss';
 
-export default function HomeButton({ shown }) {
+export default function HomeButton({ shown, adventureId }) {
 
   const homeButtonClasses = ['homeButton'];
 
@@ -16,7 +16,7 @@ export default function HomeButton({ shown }) {
   }
 
   return (
-    <Link to="/">
+    <Link to={`/${adventureId}/`}>
       <div className={homeButtonClasses.join(' ')}>
         <FontAwesomeIcon icon={faArrowLeft} />
       </div>
@@ -30,4 +30,5 @@ HomeButton.defaultProps = {
 
 HomeButton.propTypes = {
   shown: PropTypes.bool.isRequired,
+  adventureId: PropTypes.string,
 };

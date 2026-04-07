@@ -1,5 +1,51 @@
 @import '../../variables.scss';
 
+.Pin-wrapper {
+  position: relative;
+}
+
+.Pin-preview {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  padding: 8px 10px 10px;
+  pointer-events: none;
+  position: absolute;
+  bottom: 55px;
+  left: 50%;
+  transform: translateX(calc(-50% - 12px));
+  transition: opacity 0.15s ease;
+  white-space: nowrap;
+  z-index: $zIndexPinHover;
+
+  &--visible {
+    opacity: 1;
+  }
+}
+
+.Pin-preview-title {
+  color: #333;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.Pin-preview-thumbs {
+  display: flex;
+  gap: 4px;
+}
+
+.Pin-preview-thumb {
+  border-radius: 3px;
+  display: block;
+  height: 70px;
+  object-fit: cover;
+  width: 100px;
+}
+
 .Pin {
   background-color: #c33d2b;
   border-radius: 25px;
@@ -32,5 +78,3 @@
     position: absolute;
   }
 }
-
-

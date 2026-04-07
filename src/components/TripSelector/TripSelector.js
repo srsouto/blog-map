@@ -5,10 +5,9 @@ import trips from '../../trips/trips.json';
 
 class TripSelector extends React.Component {
   componentDidMount() {
-    const { tripId } = this.props.match.params;
+    const { adventureId, tripId } = this.props.match.params;
     const trip = trips.find(trip => trip.id === tripId);
-
-    this.props.onLoad(trips, trip);
+    this.props.onLoad(trips, trip, adventureId);
   }
 
   render() {

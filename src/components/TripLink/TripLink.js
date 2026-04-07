@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 
 import './TripLink.scss';
 
-export default function TripLink({ trip }) {
+export default function TripLink({ trip, adventureId }) {
   return (
-    <Link to={`/${trip.id}/`}>
+    <Link to={`/${adventureId}/${trip.id}/`}>
       <div className="TripLink">
         <div className="TripLink-label">{trip.linkTitle}</div>
         <div className="TripLink-stem" />
@@ -18,4 +18,5 @@ export default function TripLink({ trip }) {
 
 TripLink.propTypes = {
   trip: PropTypes.object.isRequired,
+  adventureId: PropTypes.string.isRequired,
 };
