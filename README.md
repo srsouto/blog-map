@@ -28,13 +28,26 @@ Fill in the values:
 
 | Variable | Where to find it |
 |---|---|
-| `GOOGLE_MAPS_API_KEY` | [Google Cloud Console](https://console.cloud.google.com/) → Credentials |
+| `GOOGLE_MAPS_API_KEY` | See below |
 | `CLOUDINARY_CLOUD_NAME` | [Cloudinary Dashboard](https://cloudinary.com/) → Settings → Access Keys |
 | `CLOUDINARY_API_KEY` | Same as above |
 | `CLOUDINARY_API_SECRET` | Same as above |
 | `SITE_URL` | Your deployed site URL, e.g. `https://yourname.netlify.app` |
 
-> **Google Maps key:** Set the application restriction to *HTTP referrers* and add your domain. The Geocoding API is handled via the Maps JS SDK so no separate key is needed.
+#### Getting and configuring a Google Maps API key
+
+1. Go to [Google Cloud Console](https://console.cloud.google.com/) and create a project (or select an existing one)
+2. Navigate to **APIs & Services → Library** and enable both:
+   - **Maps JavaScript API**
+   - **Geocoding API**
+3. Go to **APIs & Services → Credentials → Create Credentials → API key**
+4. Click the newly created key to edit its restrictions:
+   - Under **Application restrictions**, select **Websites**
+   - Add your domain: `https://yourdomain.com/*`
+   - Under **API restrictions**, select **Restrict key** and choose both **Maps JavaScript API** and **Geocoding API**
+5. Hit **Save** (changes take up to 5 minutes to propagate)
+
+> Both APIs must be on the key. The map display uses Maps JavaScript API, and the address-to-coordinates conversion (geocoding) for entries that have an `address` field instead of `coords` uses the Geocoding API via the Maps JS SDK.
 
 ### 3. Upload your photos to Cloudinary
 
