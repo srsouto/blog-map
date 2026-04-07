@@ -38,7 +38,7 @@ export default function Entry(props) {
           <meta property="og:title"
             content={`${entry.id}. ${entry.title} - ${trip.title}`} />
           <meta property="og:url"
-            content={`https://roadtrips.iwazaru.fr/${tripId}/${entry.id}-${entrySlug}`} />
+            content={`${process.env.SITE_URL}/${tripId}/${entry.id}-${entrySlug}`} />
           <meta property="og:image" content={previewThumbnailUrl} />
           <meta property="og:description" content={entry.content} />
         </Helmet>
