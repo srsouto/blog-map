@@ -100,8 +100,8 @@ class App extends React.Component {
                 onGoogleApiLoaded={() => this._onGoogleApiLoaded()} />
               <Route exact path="/:adventureId/" render={tripSelector} />
               <Route path="/:adventureId/:tripId/" render={tripSelector} />
-              <Route path="/:adventureId/:tripId/:entryId-:entrySlug" component={Entry} />
-              <Route path="/:adventureId/:tripId/:entryId-:entrySlug/:photoId" component={Photo} />
+              <Route path="/:adventureId/:tripId/:entrySlugWithId" component={Entry} />
+              <Route path="/:adventureId/:tripId/:entrySlugWithId/:photoId" component={Photo} />
             </Fragment>
           </Route>
         </Switch>
