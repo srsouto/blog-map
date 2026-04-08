@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom';
 import slugify from 'slugify';
 import { useEffect } from 'react';
 
+import GalleryButton from '../GalleryButton/GalleryButton';
 import HomeButton from '../HomeButton/HomeButton';
 import Pin from '../Pin/Pin';
 import TripLink from '../TripLink/TripLink';
@@ -83,6 +84,7 @@ const Map = ({ onZoomChange, onGoogleApiLoaded, trips, selectedTrip, adventureId
   return (
     <Fragment>
       <HomeButton shown={!!selectedTrip} adventureId={adventureId} />
+      <GalleryButton shown={!selectedTrip && !!adventureId} adventureId={adventureId} />
       {githubButton}
       <div className="Map">
         <GoogleMapReact onClick={onClick}

@@ -5,6 +5,7 @@ import { Router, Route, Switch } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 
 import Entry from '../Entry/Entry';
+import Gallery from '../Gallery/Gallery';
 import Header from '../Header/Header';
 import Landing from '../Landing/Landing';
 import Map from '../Map/Map';
@@ -98,6 +99,7 @@ class App extends React.Component {
                 onZoomChange={zoom => this._onMapZoomChange(zoom)}
                 onGoogleApiLoaded={() => this._onGoogleApiLoaded()} />
               <Route exact path="/:adventureId/" render={tripSelector} />
+              <Route path="/:adventureId/gallery" component={Gallery} />
               <Route path="/:adventureId/:tripId/" render={tripSelector} />
               <Route path="/:adventureId/:tripId/:entrySlugWithId" component={Entry} />
               <Route path="/:adventureId/:tripId/:entrySlugWithId/:photoId" component={Photo} />

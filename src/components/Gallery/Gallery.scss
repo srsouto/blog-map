@@ -1,0 +1,120 @@
+@import '../../variables.scss';
+
+.Gallery-overlay {
+  z-index: $zIndexGalleryOverlay;
+}
+
+.Gallery {
+  background: #1a1a1a;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  left: 50%;
+  max-width: 960px;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  transform: translateX(-50%);
+  width: 100%;
+  z-index: $zIndexGallery;
+}
+
+.Gallery-close {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 2rem;
+  line-height: 1;
+  opacity: 0.7;
+  padding: 12px 20px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.Gallery-scroll {
+  overflow-y: auto;
+  padding: 32px 28px 48px;
+}
+
+.Gallery-trip {
+  margin-bottom: 48px;
+}
+
+.Gallery-trip-header {
+  align-items: baseline;
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.Gallery-trip-title {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.Gallery-trip-subtitle {
+  color: #888;
+  font-size: 0.875rem;
+}
+
+.Gallery-grid {
+  display: grid;
+  gap: 6px;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+}
+
+.Gallery-item {
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+
+  &:hover .Gallery-entry-label {
+    opacity: 1;
+  }
+
+  &:hover .Gallery-thumb {
+    transform: scale(1.04);
+  }
+}
+
+.Gallery-thumb {
+  display: block;
+  height: 140px;
+  object-fit: cover;
+  transition: transform 200ms ease;
+  width: 100%;
+}
+
+.Gallery-entry-label {
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+  bottom: 0;
+  color: white;
+  font-size: 0.7rem;
+  left: 0;
+  opacity: 0;
+  padding: 20px 8px 6px;
+  position: absolute;
+  right: 0;
+  transition: opacity 200ms;
+}
+
+.Gallery-lightbox {
+  border: 2.5vh solid white;
+  cursor: zoom-out;
+  left: 50%;
+  max-height: 90vh;
+  max-width: 90vw;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: $zIndexGalleryLightbox;
+}

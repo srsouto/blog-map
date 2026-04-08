@@ -11,7 +11,7 @@ module.exports = merge(common, {
     static: { directory: require('path').join(__dirname, 'dist') },
     compress: true,
     hot: true,
-    port: 8080,
+    port: 8081,
     historyApiFallback: true,
   },
   plugins: [
