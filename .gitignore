@@ -1,9 +1,5 @@
 node_modules
 yarn-error.log
-dist/bundle*
-dist/index.html
-dist/sitemap*
-dist/images/*/photos
-dist/images/*/thumbs
+dist/
 .env
 upload-to-cloudinary.js
